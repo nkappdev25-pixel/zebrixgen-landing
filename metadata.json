@@ -1,0 +1,7 @@
+{
+  "name": "Zebrix",
+  "description": "Zebrix pomaga rodzicom uporządkować obserwacje dziecka, przygotować pytania i stworzyć informacyjną ścieżkę do rozmowy ze specjalistą.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
