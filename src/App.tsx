@@ -82,8 +82,6 @@ export default function App() {
       <Navbar
         lang={lang}
         onLanguageChange={handleLanguageChange}
-        onStartAnalysis={handleStartAnalysis}
-        onSignIn={handleSignIn}
       />
 
       <main id="main-content" className="flex-grow">
@@ -130,8 +128,6 @@ export default function App() {
         {/* Section 9: Final conversion */}
         <FinalCta
           lang={lang}
-          onStartAnalysis={handleStartAnalysis}
-          onSignIn={handleSignIn}
         />
       </main>
 

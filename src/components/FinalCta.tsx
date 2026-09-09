@@ -6,14 +6,10 @@ import { ZebrixLogo } from './ZebrixLogo';
 
 interface FinalCtaProps {
   lang: Language;
-  onStartAnalysis: () => void;
-  onSignIn: () => void;
 }
 
 export const FinalCta: React.FC<FinalCtaProps> = ({
   lang,
-  onStartAnalysis,
-  onSignIn,
 }) => {
   const t = translations[lang].finalCta;
 
@@ -39,22 +35,13 @@ export const FinalCta: React.FC<FinalCtaProps> = ({
         </p>
 
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <button
-            type="button"
-            onClick={onStartAnalysis}
+          <a
+            href="https://app.zebrixgen.com"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#4F46E5] hover:bg-[#3730A3] active:bg-[#312E81] text-white font-semibold text-base shadow-sm hover:shadow-md transition-all cursor-pointer group"
           >
             <span>{t.primaryCta}</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </button>
-
-          <button
-            type="button"
-            onClick={onSignIn}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-full text-sm font-semibold text-[#0F1F3D]/80 hover:text-[#0F1F3D] hover:bg-black/[0.04] transition-colors cursor-pointer"
-          >
-            {t.secondaryCta}
-          </button>
+          </a>
         </div>
 
         <div className="pt-2 text-xs text-[#0F1F3D]/50 flex items-center justify-center gap-1.5">

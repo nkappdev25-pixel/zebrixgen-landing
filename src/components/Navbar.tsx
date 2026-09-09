@@ -2,20 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { ZebrixLogo } from './ZebrixLogo';
 import { Language } from '../types';
 import { translations } from '../data/translations';
-import { Menu, X, ArrowRight, ShieldCheck, Globe } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
   lang: Language;
   onLanguageChange: (lang: Language) => void;
-  onStartAnalysis: () => void;
-  onSignIn: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   lang,
   onLanguageChange,
-  onStartAnalysis,
-  onSignIn,
 }) => {
   const t = translations[lang].nav;
   const [isScrolled, setIsScrolled] = useState(false);
@@ -130,24 +126,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
 
-            {/* Sign In link */}
-            <button
-              type="button"
-              onClick={onSignIn}
-              className="hidden sm:inline-flex text-sm font-medium text-[#0F1F3D]/80 hover:text-[#0F1F3D] px-3 py-1.5 rounded-full hover:bg-black/[0.03] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F46E5]"
-            >
-              {t.signIn}
-            </button>
-
             {/* Primary CTA */}
-            <button
-              type="button"
-              onClick={onStartAnalysis}
+            <a
+              href="https://app.zebrixgen.com"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold bg-[#4F46E5] hover:bg-[#3730A3] active:bg-[#312E81] text-white px-4 py-2 sm:px-4.5 sm:py-2 rounded-full shadow-xs hover:shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F46E5] focus-visible:ring-offset-2"
             >
-              <span>{t.cta}</span>
+              <span>{t.signIn}</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </button>
+            </a>
 
             {/* Mobile menu button */}
             <button
@@ -215,27 +201,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             </nav>
 
             <div className="pt-2 border-t border-black/[0.06] flex flex-col gap-2">
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onSignIn();
-                }}
-                className="w-full text-center py-2.5 text-sm font-medium text-[#0F1F3D] bg-black/[0.03] hover:bg-black/[0.06] rounded-xl"
-              >
-                {t.signIn}
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onStartAnalysis();
-                }}
+              <a
+                href="https://app.zebrixgen.com"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 py-3 text-sm font-semibold text-white bg-[#4F46E5] hover:bg-[#3730A3] rounded-xl shadow-xs"
               >
-                <span>{t.cta}</span>
+                <span>{t.signIn}</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
